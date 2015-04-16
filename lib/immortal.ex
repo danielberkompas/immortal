@@ -1,0 +1,2 @@
+defmodule Immortal do
+end
