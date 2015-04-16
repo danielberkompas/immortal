@@ -5,6 +5,14 @@ defmodule Immortal.Mixfile do
     [app: :immortal,
      version: "0.0.1",
      elixir: "~> 1.0",
+     name: "Immortal",
+     description: "Helpers for fault-tolerant OTP applications",
+     source_url: "https://github.com/danielberkompas/immortal",
+     package: package,
+     dialyzer: [
+       plt_file: "#{System.get_env("HOME")}/#{plt_filename}",
+       flags: ["--no_native", "-Wno_match", "-Wno_return"]
+     ],
      deps: deps]
   end
 
@@ -25,6 +33,27 @@ defmodule Immortal.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [{:inch_ex, only: :docs}]
+  end
+
+  defp plt_filename do
+    "elixir-#{System.version}_#{otp_release}.plt"
+  end
+
+  defp otp_release do
+    case System.get_env("TRAVIS_OTP_RELEASE") do
+      nil     -> :erlang.system_info(:otp_release)
+      release -> release
+    end
+  end
+
+  defp package do
+    [
+      contributors: ["Daniel Berkompas"],
+      licenses: ["MIT"],
+      links: %{
+        "Github" => "https://github.com/danielberkompas/immortal"
+      }
+    ]
   end
 end

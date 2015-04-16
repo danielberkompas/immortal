@@ -1,0 +1,2 @@
+%{"inch_ex": {:hex, :inch_ex, "0.2.4"},
+  "poison": {:hex, :poison, "1.4.0"}}
