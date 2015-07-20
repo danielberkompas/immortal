@@ -3,19 +3,19 @@
 -----BEGIN PGP SIGNATURE-----
 Comment: GPGTools - https://gpgtools.org
 
-iQIcBAABCgAGBQJVMBKFAAoJEKU82t1CbYQMmdoP/1b7zzAnRt5kvYOl4iQvLkm2
-HLxWCVxkAZbVJ0bOUQAPExi3DdbYBC1IbKVv+ixc+pMv/JDxrQ0AMQ85tnAhFyfT
-A6zilBMhfa3dKsZ9UGHa5IY6BhHs8o426w1xQMrVFlaXsLXPdC5fgFynRAwCGgoF
-x+oGVQjbeJk0LUEoo/zw5qPZmgjeAg6azhDVGwJKhh9Im50zOYKU5pZM9pxdb2wl
-f2gR5h0o2dK6vkd/epifj2MZFS9rRGqX/c8AMD22+CXVbR890DESHwRZ1ytGp0+m
-5nUSzXy39xTh+8XYKfkYg+S2+Ob//jR5KHnwZ/u4LUhdKfSNZr34aKHDpMCoi2Sv
-pDGIu8x6/8LWzjArY6lwf+tjU2Phm5Gdp+0brXzccvgSeAPzBn9zBZdauphc00Ze
-9Px6KeYXN2j/BHlPQHClJHiEeTJ9tPjTCVfru8fP8VApcfWJmnFzFvowv66Uzbk/
-hwGxuRHC2WgWn7kzezKIgEJ3qyHhmYRlsHNciisuiWMQIqXJ+dCza/zQdLIfOAZC
-SVvGCSOsMKjKqkihzHTpPxJ7YSQOYHnVfamqQKm6oRxN5ko4o64VT5vhQ3Od4RDf
-7D8rYR6QShhoCv0Qw+NUwZirywK20P7+b31xjtz+BMZ1rR1hNbQpwhtn0JGbjaVx
-guPif9u+jxjkbZ1cOpVb
-=zr9G
+iQIcBAABCgAGBQJVrR3KAAoJEKU82t1CbYQM3H0P/11uPrhP6RpMd/Spaylhs3Dg
+NakROUMoJICv9KYwy7Mx/pLlASUWnqFLhCdXAIIWye9eJiS2QU+Wd9ABYn1C8u8I
+c7WWQkRbQyax1vEfcj9GDG5oh6n2oCDpcHP5x7eZJPe8Jt2tBAlkvnMS5eR0FBY6
+AylY29pgZeU7nw2ZBxEZTZa/3wx4HU7IGIGCg9h8hJFuruhNkEsC+m812wz/xwIe
+LGpcUi2viQLoIZWQSy0YLD8rSLL0VRVSJzobBTmrDyialHM/3Tau0g/Tk9Zpz/BY
+PU3dyDxLLtexiDu30xA5gj+NouXrWyj8LoXZnhMEKhKf+3jbox+3087Ji0rNbS/6
+PlvDTLnfNNF8g0avwU7Fepv8qhfyRtcdQaOcNBrHGR4C3immhP5izQmNT+suxoOq
+XofD7fYiVIa3tsikJBR0WnmHGiksIcCAmdHfbHF5jeFwS/9prZy4d4klHNVihzS2
+sgS7iYSvrEQG/phZmDh7I22Ykw6cC7swi33TUsutQ7ogmnsyUZ542u7TCpx7nRiP
+F3QhzkVxeYdtsz/KX5gejuAtp5kIyHwiQZCVSiOaAZASJWxFQGsSucN5qu228+MP
+vLQbvnl78yUEaZupaTNBngE5MZfuwkQpc5wcKV+dDGf6Ia3uI95j9zXqyWhyHfC/
+ia4Kx/JDOhUShAcZ+tK9
+=G3L3
 -----END PGP SIGNATURE-----
 
 ```
@@ -29,25 +29,25 @@ guPif9u+jxjkbZ1cOpVb
 ```
 size  exec  file                              contents                                                        
             ./                                                                                                
-34            .gitignore                      e78d9bbfe2af0501e32d75b6733c6649c36e0cc29b4366d2028388a053317cf4
+39            .gitignore                      6852329ebe6cd9ed388b24316ea68612637cba18d8e6d508c502bafbac0a6c41
 624           .travis.yml                     059cc9749f5eae5b5eeafe16049f34b6e6977803610ebcffd70bcd4c106d8ccb
-153           CHANGELOG.md                    42e628018fccb4a446a68c506c2e9437df5eb0ab0071c89cf4248f2dc3a398d6
+559           CHANGELOG.md                    d8808c0aeee3da4a13d9ff146d7cb9c0254c11245eb671731738e00d6c5ff364
 436           CONTRIBUTING.md                 d23dece801790afb23510cdb0c9bec59ce1684349a517b1d2236eb136dee3b04
 1083          LICENSE                         a24b375a609f6c84e82c1458fbb0383678e3f492ffb83912731fa5313831a7c9
-698           README.md                       5c752caddaa915fa3c1b5be4608b0d5fe5a880c522413d7a2e51c234c96e5c1f
+698           README.md                       fa2f0dd2a5fcf5f2376089d26f15d305bce3f972d6102c153edd9084eb350e95
               config/                                                                                         
 1030            config.exs                    2d43b2f33a68081b675f8cedca5e74e5bdece4cd74258308326347b55ba85231
               lib/                                                                                            
                 immortal/                                                                                     
-3499              ets_table_manager.ex        06da3d2475cfa37bb59b00864f41fc4f7982a592b18206bc5c6ed578b81e7ce8
+3634              ets_table_manager.ex        acaf9800a8e849fb1e195abfb80e5412b525be09b27db03333474b884fb54b72
 391             immortal.ex                   fae89bd37cd3100de85b66a5dd048daf1d54f8546ea83c025a3cdd471be4a89a
-1370          mix.exs                         95ca472ccd8523c8919c5f302753cd3d3ad4537e0d541370d2d8c7d08893d994
-78            mix.lock                        71da16b19bbb8817a2f9d2620bf28757014270249ced83b0f043f919922791f6
+1497          mix.exs                         b5298a5f0845cb1d7f7b10021f03a38d756ae01fdf210f2b25de79591912395a
+116           mix.lock                        0464f58aafcacb881a220f861d373153041800d0cbee8889e13626cecb1d6992
               script/                                                                                         
 621   x         release                       ac5c0088bca2a25568fa5bb438ea19666c01b053cdb4d116676ba85c20ab3bf5
               test/                                                                                           
                 immortal/                                                                                     
-1803              ets_table_manager_test.exs  fb1df4c4a569997bba7bb419ad8790a5640d4ac442fec84df5274202e7124664
+1839              ets_table_manager_test.exs  f898247699ea34ff8e38a2cf6b7ad3bbc2b52759152bebd2750167e0a8e202d0
 48              immortal_test.exs             24b0f61d10195d2b404d1a5c304c1197b7fe1fe555524e5f8b91de3ee47950e3
 15              test_helper.exs               b086ec47f0c6c7aaeb4cffca5ae5243dd05e0dc96ab761ced93325d5315f4b12
 ```
