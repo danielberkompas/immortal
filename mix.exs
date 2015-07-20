@@ -9,6 +9,7 @@ defmodule Immortal.Mixfile do
      description: "Helpers for fault-tolerant OTP applications",
      source_url: "https://github.com/danielberkompas/immortal",
      package: package,
+     docs: docs,
      dialyzer: [
        plt_file: "#{System.get_env("HOME")}/#{plt_filename}",
        flags: ["--no_native", "-Wno_match", "-Wno_return"]
@@ -35,6 +36,13 @@ defmodule Immortal.Mixfile do
   defp deps do
     [{:inch_ex, only: :docs},
      {:ex_doc, only: :docs}]
+  end
+
+  def docs do
+    [
+      readme: "README.md",
+      main: Immortal
+    ]
   end
 
   defp plt_filename do
