@@ -1,6 +1,6 @@
-defmodule Immortal.EtsTableManagerTest do
+defmodule Immortal.ETSTableManagerTest do
   use ExUnit.Case
-  alias Immortal.EtsTableManager, as: TableManager
+  alias Immortal.ETSTableManager, as: TableManager
 
   defmodule TableConsumer do
     use GenServer
@@ -37,6 +37,8 @@ defmodule Immortal.EtsTableManagerTest do
     {:ok, manager} = TableManager.start_link(TableConsumer, [:public])
     {:ok, manager: manager}
   end
+
+  doctest Immortal.ETSTableManager
 
   test "ETS table attributes can be customized when manager starts" do
     {:ok, manager} = TableManager.start_link(TableConsumer, [:ordered_set])
