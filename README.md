@@ -16,7 +16,7 @@ Get it from Hex:
 
 ```elixir
 def deps do
-  {:immortal, "~> 0.0.1"}
+  {:immortal, "~> 0.1.0"}
 end
 ```
 
