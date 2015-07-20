@@ -7,7 +7,7 @@ common problem in the most concise possible way.
 
 ## Included Modules:
 
-- `Immortal.EtsTableManager`: Keep your ETS tables alive while your process
+- `Immortal.ETSTableManager`: Keep your ETS tables alive while your process
   is rebooted by your supervisor.
 
 ## Installation

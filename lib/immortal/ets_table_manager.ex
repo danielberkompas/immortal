@@ -1,6 +1,4 @@
-defmodule Immortal.EtsTableManager do
-  use GenServer
-
+defmodule Immortal.ETSTableManager do
   @shortdoc """
   Keep your ETS tables alive while your process is rebooted by your supervisor.
   """
@@ -44,6 +42,8 @@ defmodule Immortal.EtsTableManager do
       end
   """
 
+  use GenServer
+
   @doc """
   Start a new TableManager process.
 
@@ -52,6 +52,12 @@ defmodule Immortal.EtsTableManager do
     again if it dies.
 
   - `ets_options`: Any options you want to pass to `:ets.new/2`.
+
+  ## Example
+
+      iex> {:ok, pid} = Immortal.ETSTableManager.start_link(TableConsumer, [:public])
+      ...> is_pid(pid)
+      true
   """
   @spec start_link(atom, list) :: {:ok, pid}
   def start_link(target_process_name, ets_options \\ []) do
