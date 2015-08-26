@@ -38,7 +38,14 @@ defmodule Immortal.ETSTableManagerTest do
     {:ok, manager: manager}
   end
 
-  doctest Immortal.ETSTableManager
+
+  doctest TableManager
+
+  test "ETS table shares table consumer name when :named_table is passed" do
+    TableManager.start_link(TableConsumer, [:public, :named_table])
+    info = :ets.info(TableConsumer)
+    assert info[:type] == :set
+  end
 
   test "ETS table attributes can be customized when manager starts" do
     {:ok, manager} = TableManager.start_link(TableConsumer, [:ordered_set])

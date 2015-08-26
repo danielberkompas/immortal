@@ -14,7 +14,7 @@ defmodule Immortal.ETSTableManager do
   is designed to:
 
   1. Create an ETS table, setting itself as the heir.
-  2. Give away ownership of the table to a named process of your choosing.
+  2. Give away ownership of the table to a named process of your choosing.   
   3. If the other process crashes, receive ownership of the table back and wait
      until that process is rebooted by the supervisor.
   4. Give ownership back to the other process after it reboots.
@@ -51,7 +51,9 @@ defmodule Immortal.ETSTableManager do
     table away to. The process must be named so that TableManager can find it
     again if it dies.
 
-  - `ets_options`: Any options you want to pass to `:ets.new/2`.
+  - `ets_options`: Any options you want to pass to `:ets.new/2`. If the 
+    `:named_table` option is passed, the ETS table's name will be the same
+    as `target_process_name`.
 
   ## Example
 
@@ -81,7 +83,7 @@ defmodule Immortal.ETSTableManager do
   @doc "Create and give away the ETS table"
   def handle_call({:create_table, target_process_name, ets_options}, _from, _state) do
     ets_options = ets_options ++ [{:heir, self, {}}]
-    table = :ets.new(Immortal.Table, ets_options)
+    table = :ets.new(target_process_name, ets_options)
     give_away(table, target_process_name)
     {:reply, table, {table, target_process_name}}
   end
@@ -108,9 +110,7 @@ defmodule Immortal.ETSTableManager do
 
   defp wait_for(module) do
     case Process.whereis(module) do
-      nil ->
-        :timer.sleep(1)
-        wait_for(module)
+      nil -> wait_for(module)
       pid -> pid
     end
   end
