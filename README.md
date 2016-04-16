@@ -1,6 +1,8 @@
 Immortal
 ========
 
+[![Deps Status](https://beta.hexfaktor.org/badge/all/github/danielberkompas/immortal.svg)](https://beta.hexfaktor.org/github/danielberkompas/immortal)
+
 Immortal is a small collection of helper modules intended to make it easier
 to build a fault-tolerant OTP application. Each module tries to solve a
 common problem in the most concise possible way.
