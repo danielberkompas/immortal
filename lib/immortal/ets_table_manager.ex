@@ -25,7 +25,7 @@ defmodule Immortal.ETSTableManager do
 
       children = [
         worker(YourApp.TableConsumer, []),
-        worker(Immortal.EtsTableManager, [YourApp.TableConsumer, [:public]])
+        worker(Immortal.ETSTableManager, [YourApp.TableConsumer, [:public]])
       ]
 
   `Immortal.EtsTableManager` will wait until your `YourApp.TableConsumer`
