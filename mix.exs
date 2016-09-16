@@ -3,7 +3,7 @@ defmodule Immortal.Mixfile do
 
   def project do
     [app: :immortal,
-     version: "0.2.1",
+     version: "0.2.2",
      elixir: "~> 1.0",
      name: "Immortal",
      description: "Helpers for fault-tolerant OTP applications",
@@ -34,8 +34,8 @@ defmodule Immortal.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:inch_ex, only: :docs},
-     {:ex_doc, only: :docs}]
+    [{:inch_ex, ">= 0.0.0", only: :docs},
+     {:ex_doc, ">= 0.0.0", only: [:dev, :docs]}]
   end
 
   def docs do
