@@ -8,13 +8,13 @@ defmodule Immortal.Mixfile do
      name: "Immortal",
      description: "Helpers for fault-tolerant OTP applications",
      source_url: "https://github.com/danielberkompas/immortal",
-     package: package,
-     docs: docs,
+     package: package(),
+     docs: docs(),
      dialyzer: [
-       plt_file: "#{System.get_env("HOME")}/#{plt_filename}",
+       plt_file: "#{System.get_env("HOME")}/#{plt_filename()}",
        flags: ["--no_native", "-Wno_match", "-Wno_return"]
      ],
-     deps: deps]
+     deps: deps()]
   end
 
   # Configuration for the OTP application
@@ -46,7 +46,7 @@ defmodule Immortal.Mixfile do
   end
 
   defp plt_filename do
-    "elixir-#{System.version}_#{otp_release}.plt"
+    "elixir-#{System.version}_#{otp_release()}.plt"
   end
 
   defp otp_release do
