@@ -82,7 +82,7 @@ defmodule Immortal.ETSTableManager do
 
   @doc "Create and give away the ETS table"
   def handle_call({:create_table, target_process_name, ets_options}, _from, _state) do
-    ets_options = ets_options ++ [{:heir, self, {}}]
+    ets_options = ets_options ++ [{:heir, self(), {}}]
     table = :ets.new(target_process_name, ets_options)
     give_away(table, target_process_name)
     {:reply, table, {table, target_process_name}}
