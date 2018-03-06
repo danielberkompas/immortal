@@ -9,10 +9,14 @@ defmodule Immortal.ETSTableManagerTest do
       GenServer.start(__MODULE__, :ok, name: __MODULE__)
     end
 
+    def init(args) do
+      {:ok, args}
+    end
+
     def restart do
       process = Process.whereis(__MODULE__)
       Process.exit(process, :normal)
-      start
+      start()
     end
 
     def table do
@@ -33,11 +37,10 @@ defmodule Immortal.ETSTableManagerTest do
   end
 
   setup do
-    TableConsumer.start
+    TableConsumer.start()
     {:ok, manager} = TableManager.start_link(TableConsumer, [:public])
     {:ok, manager: manager}
   end
-
 
   doctest TableManager
 
@@ -53,25 +56,25 @@ defmodule Immortal.ETSTableManagerTest do
     consumer = Process.whereis(TableConsumer)
     info = :ets.info(table)
 
-    assert info[:type]  == :ordered_set
+    assert info[:type] == :ordered_set
     assert info[:owner] == consumer
-    assert info[:heir]  == manager
+    assert info[:heir] == manager
   end
 
-  test "can provide an ETS table to a properly configured consumer", context do
-    managed_table = TableManager.table(context[:manager])
-    assert is_integer(managed_table)
-    assert TableConsumer.table == managed_table
+  test "can provide an ETS table to a properly configured consumer", %{manager: manager} do
+    managed_table = TableManager.table(manager)
+    assert is_reference(managed_table)
+    assert TableConsumer.table() == managed_table
   end
 
   test "the table survives restarts of the consumer" do
     # Insert some data
-    table = TableConsumer.table
+    table = TableConsumer.table()
     :ets.insert(table, {:test, "value"})
 
     # Restart the TableConsumer process
-    TableConsumer.restart
-    table = TableConsumer.table
+    TableConsumer.restart()
+    table = TableConsumer.table()
 
     # Ensure data is still present
     [value] = :ets.lookup(table, :test)

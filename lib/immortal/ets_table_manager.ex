@@ -1,8 +1,4 @@
 defmodule Immortal.ETSTableManager do
-  @shortdoc """
-  Keep your ETS tables alive while your process is rebooted by your supervisor.
-  """
-
   @moduledoc """
   Creates and keeps an ETS table alive using the `heir` feature. Normally, an
   ETS table will die as soon as its owner process dies. This means that if the
@@ -68,6 +64,11 @@ defmodule Immortal.ETSTableManager do
     {:ok, pid}
   end
 
+  @doc false
+  def init(args) do
+    {:ok, args}
+  end
+
   @doc """
   Get the ID of the ETS table that a TableManager is currently managing.
   """
@@ -89,7 +90,7 @@ defmodule Immortal.ETSTableManager do
   end
 
   @doc "Retrieve the ETS table"
-  def handle_call(:retrieve_table, _from, {table,_} = state) do
+  def handle_call(:retrieve_table, _from, {table, _} = state) do
     {:reply, table, state}
   end
 
