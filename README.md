@@ -13,6 +13,9 @@ common problem in the most concise possible way.
 - `Immortal.ETSTableManager`: Keep your ETS tables alive while your process
   is rebooted by your supervisor.
 
+- `Immortal.Ghost`: Create processes which remain alive for a set period
+  after a target process dies.
+
 ## Installation
 
 Get it from Hex:
