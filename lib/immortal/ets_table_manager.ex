@@ -110,9 +110,12 @@ defmodule Immortal.ETSTableManager do
   end
 
   defp wait_for(module) do
-    case Process.whereis(module) do
-      nil -> wait_for(module)
-      pid -> pid
+    pid = Process.whereis(module)
+
+    if pid && Process.alive?(pid) do
+      pid
+    else
+      wait_for(module)
     end
   end
 end
