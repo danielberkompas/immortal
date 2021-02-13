@@ -5,12 +5,12 @@ defmodule Immortal.ETSTableManager do
   owner and consumer of the table are the same process, you can lose your table
   to a crash.
 
-  However, if (prior to its death) your table sets a different process as its 
+  However, if (prior to its death) your table sets a different process as its
   heir, the crash will not delete the table. Hence, `Immortal.EtsTableManager`
   is designed to:
 
   1. Create an ETS table, setting itself as the heir.
-  2. Give away ownership of the table to a named process of your choosing.   
+  2. Give away ownership of the table to a named process of your choosing.
   3. If the other process crashes, receive ownership of the table back and wait
      until that process is rebooted by the supervisor.
   4. Give ownership back to the other process after it reboots.
@@ -47,7 +47,7 @@ defmodule Immortal.ETSTableManager do
     table away to. The process must be named so that TableManager can find it
     again if it dies.
 
-  - `ets_options`: Any options you want to pass to `:ets.new/2`. If the 
+  - `ets_options`: Any options you want to pass to `:ets.new/2`. If the
     `:named_table` option is passed, the ETS table's name will be the same
     as `target_process_name`.
 
@@ -81,7 +81,7 @@ defmodule Immortal.ETSTableManager do
   # GenServer API
   ###
 
-  @doc "Create and give away the ETS table"
+  # Create and give away the ETS table
   def handle_call({:create_table, target_process_name, ets_options}, _from, _state) do
     ets_options = ets_options ++ [{:heir, self(), {}}]
     table = :ets.new(target_process_name, ets_options)
@@ -89,12 +89,12 @@ defmodule Immortal.ETSTableManager do
     {:reply, table, {table, target_process_name}}
   end
 
-  @doc "Retrieve the ETS table"
+  # Retrieve the ETS table
   def handle_call(:retrieve_table, _from, {table, _} = state) do
     {:reply, table, state}
   end
 
-  @doc "Handle the ETS transfer if CallTracker crashes"
+  # Handle the ETS transfer if CallTracker crashes
   def handle_info({:"ETS-TRANSFER", table, _pid, _data}, {_, target_process_name} = state) do
     give_away(table, target_process_name)
     {:noreply, state}

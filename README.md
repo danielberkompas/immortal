@@ -1,7 +1,7 @@
 Immortal
 ========
 
-[![Build Status](https://travis-ci.org/danielberkompas/immortal.svg?branch=master)](https://travis-ci.org/danielberkompas/immortal)
+[![Build Status](https://danielberkompas.semaphoreci.com/badges/immortal/branches/master.svg?style=shields)](https://danielberkompas.semaphoreci.com/projects/immortal)
 [![Deps Status](https://beta.hexfaktor.org/badge/all/github/danielberkompas/immortal.svg)](https://beta.hexfaktor.org/github/danielberkompas/immortal)
 
 Immortal is a small collection of helper modules intended to make it easier
